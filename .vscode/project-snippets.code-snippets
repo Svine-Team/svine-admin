@@ -1,0 +1,40 @@
+{
+  "Import as styled": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": ".impst",
+    "body": "import * as Styled from './${TM_FILENAME_BASE}.styled'"
+  },
+  "Reexport component index.ts": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": ".exind",
+    "body": "export { ${1:${TM_DIRECTORY/^.+\\/(.*)$/${1:/capitalize}/}} } from './${3:${TM_DIRECTORY/^.+\\/(.*)$/$1/}}';"
+  },
+  "Reexport default component index.ts": {
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "prefix": ".dexind",
+    "body": [
+      "import { ${1:${TM_DIRECTORY/^.+\\/(.*)$/${1:/capitalize}/}} } from './${2:${TM_DIRECTORY/^.+\\/(.*)$/$1/}}';\n",
+      "export default ${1:${TM_DIRECTORY/^.+\\/(.*)$/${1:/capitalize}/}};"
+    ]
+  },
+  "Snippet for React-TS Component with props": {
+    "scope": "typescript,typescriptreact",
+    "prefix": ".mytsrafc",
+    "body": [
+      "type T${1:${TM_FILENAME_BASE/(.*)$/${1:/capitalize}/}}Props = {}",
+      "",
+      "export const ${1:first} = ({}: ${1:first}Props) => {",
+      "  return <div>${1:first}</div>",
+      "}"
+    ]
+  },
+  "Snippet for React-TS Component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": ".myrafc",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE/(.*)$/${1:/capitalize}/}} = () => {",
+      "  return <div>${1:first}</div>",
+      "}"
+    ]
+  }
+}
